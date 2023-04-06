@@ -1,0 +1,83 @@
+##ODEV 2
+
+# !!!!!!KENDİ SEÇTİĞİM ÖRNEKLEMLERLE OLUŞTURDUM EĞER KODU KOPYALAYAN OLURSA SAYILARI DEĞİŞTİRSİN LÜTFEN. YOKSA FARK EDİLİR :) !!!!!!!!#
+
+#1.B
+"""
+tip1= [184, 188, 188, 188, 189, 194, 194, 195, 197, 198, 201, 201, 203, 204, 207, 212, 218, 219, 219, 234]
+import matplotlib.pyplot as plt
+plt.boxplot(tip1)
+plt.show()
+
+tip2= [155, 155, 157, 173, 186, 192, 193, 197, 203, 205, 209, 213, 214, 216, 221, 221, 223, 225, 241, 257]
+import matplotlib.pyplot as plt
+plt.boxplot(tip2)
+plt.show()
+"""
+
+#1.C
+"""
+    #TİP1
+import matplotlib.pyplot as plt
+import pandas as pd
+import stemgraphic
+A = [182, 184, 187, 188, 188, 189, 193, 194, 194, 195, 197, 198, 198, 199, 201, 201, 202, 202, 203, 203, 204, 205, 205, 207, 208, 208, 209, 209, 209, 209, 212, 213, 213, 214, 216, 218, 219, 219, 219, 219, 223, 225, 225, 227, 228, 228, 229, 234, 236, 238]
+y = pd.Series(A)
+fig, ax = stemgraphic.stem_graphic(y)
+plt.savefig("grafik1.png")  #grafik1 olarak bilgisayara kaydedilir
+
+
+import matplotlib.pyplot as plt
+import pandas as pd
+import stemgraphic
+B = [151, 153, 155, 157, 161, 173, 176, 182, 184, 185, 186, 191, 192, 192, 193, 194, 197, 198, 201, 201, 203, 203, 204, 205, 206, 206, 207, 208, 209, 212, 213, 213, 214, 215, 216, 218, 219, 219, 219, 221, 223, 225, 227, 231, 241, 251, 257, 258, 259, 259]
+y = pd.Series(B)
+fig, ax = stemgraphic.stem_graphic(y)
+plt.savefig("grafik2.png")  #grafik2 olarak bilgisayara kaydedilir
+"""
+
+#2.A
+"""
+import pandas as pd
+
+tip1 = pd.DataFrame([350,350,350,358,370,370,370,371,371,372,372,384,391,391,392], columns=["TIP1"])
+tip2 = pd.DataFrame([350,354,359,363,365,368,369,371,373,374,376,380,383,388,392], columns=["TIP2"])
+tip3 = pd.DataFrame([350,361,362,364,364,365,366,371,377,377,377,379,380,380,392], columns=["TIP3"])
+data = pd.concat([tip1, tip2, tip3], axis=1)
+data.boxplot(column=["TIP1", "TIP2", "TIP3"])
+plt.show()
+"""
+
+#2.B
+"""
+import matplotlib.pyplot as plt
+
+data = {
+    'Tip 1': [350,350,350,358,370,370,370,371,371,372,372,384,391,391,392],
+    'Tip 2': [350,354,359,363,365,368,369,371,373,374,376,380,383,388,392],
+    'Tip 3': [350,361,362,364,364,365,366,371,377,377,377,379,380,380,392]
+}
+
+labels = list(data.keys())
+values = list(data.values())
+
+for i in range(len(values)):
+    plt.scatter([i]*len(values[i]), values[i])
+
+plt.xticks(range(len(labels)), labels)
+plt.xlabel('Numune Tipi')
+plt.ylabel('Yorulma Limiti (MPa)')
+plt.show()
+"""
+
+#2.C
+"""
+import pandas as pd
+
+tip1 = pd.DataFrame([350,350,350,358,370,370,370,371,371,372,372,384,391,391,392], columns=["TIP1"])
+tip2 = pd.DataFrame([350,354,359,363,365,368,369,371,373,374,376,380,383,388,392], columns=["TIP2"])
+tip3 = pd.DataFrame([350,361,362,364,364,365,366,371,377,377,377,379,380,380,392], columns=["TIP3"])
+print(tip1.describe())
+print(tip2.describe())
+print(tip3.describe())
+"""
